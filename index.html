@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <title>About me</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b6f9b56878.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Hello!</h1>
+    <div class="navbar">
+      <div class="my-container d-flex justify-content-between">
+        <h1 class="header">jonathan_jacob.rb</h1>
+        <h1><a href="https://www.linkedin.com/in/jonathanjacob1/"><i class="fab fa-linkedin"></i></a></h1>
+        <h1><a href="https://github.com/Jonathan-Jacob"><i class="fab fa-github"></i></a></h1>
+        <h1><a href="https://linktr.ee/jjacob"><i class="fas fa-tree"></i></a></h1>
+      </div>
+    </div>
+    <div class="my-container">
+      <p><span style="color: var(--pink)">class</span> <span style="color: var(--green)">JonathanJacob < ApplicationRecord</span></p>
+      <p>  has_many <span style="color: var(--blue)">:ideas</span></p>
+      <p>  validates <span style="color: var(--blue)">:brain, presence: true, uniqueness: true</span></p>
+      <br>
+      <p>  <span style="color: var(--pink)">def</span> <span style="color: var(--yellow)">dream_job?</span>(<span style="color: var(--ice)">job</span>)</p>
+      <p>    <span style="color: var(--ice)">job</span>.<span style="color: var(--yellow)">challenging?</span> && <span style="color: var(--ice)">job</span>.<span style="color: var(--yellow)">culture.good?</span> && <span style="color: var(--ice)">job</span>.<span style="color: var(--yellow)">pay.fair?</span></p>
+      <p>  <span style="color: var(--pink)">end</span></p>
+      <br>
+      <p>  <span style="color: var(--pink)">def</span> <span style="color: var(--yellow)">email</span></p>
+      <p>    <span style="color: var(--orange)">"jjacob.car</span><span style="color: var(--orange)">eer@gmail.com"</span></p>
+      <p>  <span style="color: var(--pink)">end</span></p>
+      <br>
+      <p>  <span style="color: var(--pink)">def</span> <span style="color: var(--yellow)">phone</span></p>
+      <p>    <span style="color: var(--orange)">"+4917662</span><span style="color: var(--orange)">159114"</span></p>
+      <p>  <span style="color: var(--pink)">end</span></p>
+      <p><span style="color: var(--pink)">end</span></p>
     </div>
   </body>
 </html>

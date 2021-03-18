@@ -1,0 +1,58 @@
+:root {
+  --dark: #1e1e1e;
+  --semi-dark: #3c3c3c;
+  --bright: #d4d4d4;
+  --blue: #569cb3;
+  --ice: #9cdcfe;
+  --pink: #c183b2;
+  --green: #4dbb7b;
+  --yellow: #d0dcaa;
+  --orange: #c39178;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--dark);
+  color: var(--bright);
+  font-family: 'Courier Prime', monospace;
+}
+
+.my-container {
+  width: min(80vw, 720px);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--ice);
+}
+
+a:hover {
+  color: var(--yellow);
+}
+
+p {
+  white-space: pre-wrap;
+  font-size: clamp(12px,2vw,16px);
+  margin-bottom: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: var(--semi-dark);
+  color: var(--bright);
+  padding: 4px;
+  margin-bottom: 4px;
+}
+
+.navbar h1 {
+  margin-bottom: -8px;
+}
+
+.navbar .header {
+  width: 70%;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: clamp(12px,5vw,32px);
+}
