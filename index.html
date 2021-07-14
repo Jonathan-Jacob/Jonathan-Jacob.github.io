@@ -2,39 +2,1435 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About me</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b6f9b56878.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="navbar">
-      <div class="my-container d-flex justify-content-between">
-        <h1 class="header">jonathan_jacob.rb</h1>
-        <h1><a href="https://www.linkedin.com/in/jonathanjacob1/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></h1>
-        <h1><a href="https://github.com/Jonathan-Jacob" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></h1>
-        <h1><a href="https://linktr.ee/jjacob" target="_blank" rel="noopener noreferrer"><i class="fas fa-tree"></i></a></h1>
-      </div>
-    </div>
     <div class="my-container">
-      <p><span style="color: var(--pink)">class</span> <span style="color: var(--green)">JonathanJacob < ApplicationRecord</span></p>
-      <p>  has_many <span style="color: var(--blue)">:ideas</span></p>
-      <p>  validates <span style="color: var(--blue)">:brain, presence: true, uniqueness: true</span></p>
-      <br>
-      <p>  <span style="color: var(--pink)">def</span> <span style="color: var(--yellow)">dream_job?</span>(<span style="color: var(--ice)">job</span>)</p>
-      <p>    <span style="color: var(--ice)">job</span>.<span style="color: var(--yellow)">challenging?</span> && <span style="color: var(--ice)">job</span>.<span style="color: var(--yellow)">culture.good?</span> && <span style="color: var(--ice)">job</span>.<span style="color: var(--yellow)">pay.fair?</span></p>
-      <p>  <span style="color: var(--pink)">end</span></p>
-      <br>
-      <p>  <span style="color: var(--pink)">def</span> <span style="color: var(--yellow)">email</span></p>
-      <p>    <span style="color: var(--orange)">"jjacob.car</span><span style="color: var(--orange)">eer@gmail.com"</span></p>
-      <p>  <span style="color: var(--pink)">end</span></p>
-      <br>
-      <p>  <span style="color: var(--pink)">def</span> <span style="color: var(--yellow)">phone</span></p>
-      <p>    <span style="color: var(--orange)">"+4917662</span><span style="color: var(--orange)">159114"</span></p>
-      <p>  <span style="color: var(--pink)">end</span></p>
-      <p><span style="color: var(--pink)">end</span></p>
+      <h1 class="mt-3">Kita-Gebührenrechner</h1>
+      <hr>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Jahreseinkommen in €</p>
+          <p>(der Eltern)</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" type="number" id="einkommen">
+        </div>
+        <div class="col-12 col-lg-6 mb-3 d-xs-none d-sm-none d-md-none d-lg-block"></div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Anzahl Kita-Kinder unter 3</p>
+          <p>(verlängerte Öffnungszeiten)</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" type="number" id="krippe-vo" min=0 max=10>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Anzahl Kita-Kinder unter 3</p>
+          <p>(Ganztagsbetreuung)</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" type="number" id="krippe-gt" min=0 max=10>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Anzahl Kita-Kinder ab 3</p>
+          <p>(Regelbetreuung)</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" type="number" id="kiga-re" min=0 max=10>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Anzahl Kita-Kinder ab 3</p>
+          <p>(verlängerte Öffnungszeiten)</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="kiga-vo" min=0 max=10></div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Anzahl Kita-Kinder ab 3</p>
+          <p>(Ganztagsbetreuung)</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="kiga-gt" min=0 max=10></div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <p>Anzahl anderer Kinder unter 18</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="andere" min=0 max=10></div>
+      </div>
+      <hr>
+      <div class="row align-items-start">
+        <div class="col-12 col-lg-6">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <h2>Variante 3a</h2>
+            </div>
+            <div class="col-12 mb-2">
+              <p>bisher</p>
+            </div>
+            <div class="col-12 mb-4" id="bisher-3a">0,00 €</div>
+            <div class="col-4 mb-2">
+              <p>ab Sep 2021</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>Teuerung</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>pro Stunde</p>
+            </div>
+            <div class="col-4 mb-4" id="sep21-3a">0,00 €</div>
+            <div class="col-4 mb-4" id="sep21-3a-prozent">0%</div>
+            <div class="col-4 mb-4" id="sep21-3a-prozent-stunde">0%</div>
+            <div class="col-4 mb-2">
+              <p>ab Sep 2022</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>Teuerung</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>pro Stunde</p>
+            </div>
+            <div class="col-4 mb-4" id="sep22-3a">0,00 €</div>
+            <div class="col-4 mb-4" id="sep22-3a-prozent">0%</div>
+            <div class="col-4 mb-4" id="sep22-3a-prozent-stunde">0%</div>
+            <div class="col-4 mb-2">
+              <p>ab Sep 2023</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>Teuerung</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>pro Stunde</p>
+            </div>
+            <div class="col-4 mb-3" id="sep23-3a">0,00 €</div>
+            <div class="col-4 mb-3" id="sep23-3a-prozent">0%</div>
+            <div class="col-4 mb-3" id="sep23-3a-prozent-stunde">0%</div>
+          </div>
+        </div>
+        <div class="col-12 order-12 order-lg-2">
+          <hr>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <h2>Variante 3b</h2>
+            </div>
+            <div class="col-12 mb-2">
+              <p>bisher</p>
+            </div>
+            <div class="col-12 mb-4" id="bisher-3b">0,00 €</div>
+            <div class="col-4 mb-2">
+              <p>ab Sep 2021</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>Teuerung</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>pro Stunde</p>
+            </div>
+            <div class="col-4 mb-4" id="sep21-3b">0,00 €</div>
+            <div class="col-4 mb-4" id="sep21-3b-prozent">0%</div>
+            <div class="col-4 mb-4" id="sep21-3b-prozent-stunde">0%</div>
+            <div class="col-4 mb-2">
+              <p>ab Sep 2022</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>Teuerung</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>pro Stunde</p>
+            </div>
+            <div class="col-4 mb-4" id="sep22-3b">0,00 €</div>
+            <div class="col-4 mb-4" id="sep22-3b-prozent">0%</div>
+            <div class="col-4 mb-4" id="sep22-3b-prozent-stunde">0%</div>
+            <div class="col-4 mb-2">
+              <p>ab Sep 2023</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>Teuerung</p>
+            </div>
+            <div class="col-4 mb-2">
+              <p>pro Stunde</p>
+            </div>
+            <div class="col-4 mb-3" id="sep23-3b">0,00 €</div>
+            <div class="col-4 mb-3" id="sep23-3b-prozent">0%</div>
+            <div class="col-4 mb-3" id="sep23-3b-prozent-stunde">0%</div>
+          </div>
+        </div>
+        <div class="col-12 d-lg-none d-xl-none">
+          <hr>
+        </div>
+      </div>
+      <p class="imprint">©Jonathan Jacob, D-79618 Rheinfelden</p>
     </div>
+    <script>
+      const geld = {
+        bisher: {
+          krippe: {
+            vo: {
+              o61: {
+                k1: 325,
+                k2: 260,
+                k3: 208,
+                k4: 166
+              },
+              u61: {
+                k1: 325,
+                k2: 260,
+                k3: 208,
+                k4: 166
+              },
+              u51: {
+                k1: 276,
+                k2: 221,
+                k3: 177,
+                k4: 141
+              },
+              u41: {
+                k1: 221,
+                k2: 177,
+                k3: 141,
+                k4: 113
+              },
+              u31: {
+                k1: 166,
+                k2: 133,
+                k3: 106,
+                k4: 85
+              }
+            },
+            gt: {
+              o61: {
+                k1: 542,
+                k2: 434,
+                k3: 347,
+                k4: 278
+              },
+              u61: {
+                k1: 542,
+                k2: 434,
+                k3: 347,
+                k4: 278
+              },
+              u51: {
+                k1: 461,
+                k2: 369,
+                k3: 295,
+                k4: 236
+              },
+              u41: {
+                k1: 369,
+                k2: 295,
+                k3: 236,
+                k4: 189
+              },
+              u31: {
+                k1: 276,
+                k2: 221,
+                k3: 177,
+                k4: 142
+              }
+            }
+          },
+          kiga: {
+            re: {
+              o61: {
+                k1: 111,
+                k2: 89,
+                k3: 71,
+                k4: 57
+              },
+              u61: {
+                k1: 111,
+                k2: 89,
+                k3: 71,
+                k4: 57
+              },
+              u51: {
+                k1: 94,
+                k2: 75,
+                k3: 60,
+                k4: 48
+              },
+              u41: {
+                k1: 75,
+                k2: 60,
+                k3: 48,
+                k4: 39
+              },
+              u31: {
+                k1: 57,
+                k2: 45,
+                k3: 36,
+                k4: 29
+              }
+            },
+            vo: {
+              o61: {
+                k1: 139,
+                k2: 111,
+                k3: 89,
+                k4: 71
+              },
+              u61: {
+                k1: 139,
+                k2: 111,
+                k3: 89,
+                k4: 71
+              },
+              u51: {
+                k1: 118,
+                k2: 95,
+                k3: 76,
+                k4: 60
+              },
+              u41: {
+                k1: 95,
+                k2: 76,
+                k3: 60,
+                k4: 48
+              },
+              u31: {
+                k1: 71,
+                k2: 57,
+                k3: 45,
+                k4: 36
+              }
+            },
+            gt: {
+              o61: {
+                k1: 232,
+                k2: 186,
+                k3: 148,
+                k4: 119
+              },
+              u61: {
+                k1: 232,
+                k2: 186,
+                k3: 148,
+                k4: 119
+              },
+              u51: {
+                k1: 197,
+                k2: 158,
+                k3: 126,
+                k4: 101
+              },
+              u41: {
+                k1: 158,
+                k2: 126,
+                k3: 101,
+                k4: 81
+              },
+              u31: {
+                k1: 118,
+                k2: 95,
+                k3: 76,
+                k4: 61
+              }
+            }
+          }
+        },
+        var3a: {
+          abSep21: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 390,
+                  k2: 312,
+                  k3: 250,
+                  k4: 200
+                },
+                u61: {
+                  k1: 351,
+                  k2: 281,
+                  k3: 225,
+                  k4: 180
+                },
+                u51: {
+                  k1: 298,
+                  k2: 239,
+                  k3: 191,
+                  k4: 153
+                },
+                u41: {
+                  k1: 238,
+                  k2: 191,
+                  k3: 153,
+                  k4: 122
+                },
+                u31: {
+                  k1: 179,
+                  k2: 143,
+                  k3: 115,
+                  k4: 92
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 650,
+                  k2: 520,
+                  k3: 416,
+                  k4: 333
+                },
+                u61: {
+                  k1: 585,
+                  k2: 468,
+                  k3: 374,
+                  k4: 300
+                },
+                u51: {
+                  k1: 497,
+                  k2: 398,
+                  k3: 318,
+                  k4: 255
+                },
+                u41: {
+                  k1: 398,
+                  k2: 318,
+                  k3: 254,
+                  k4: 204
+                },
+                u31: {
+                  k1: 299,
+                  k2: 239,
+                  k3: 191,
+                  k4: 153
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 133,
+                  k2: 107,
+                  k3: 85,
+                  k4: 69
+                },
+                u61: {
+                  k1: 120,
+                  k2: 96,
+                  k3: 77,
+                  k4: 62
+                },
+                u51: {
+                  k1: 102,
+                  k2: 81,
+                  k3: 65,
+                  k4: 52
+                },
+                u41: {
+                  k1: 81,
+                  k2: 65,
+                  k3: 52,
+                  k4: 42
+                },
+                u31: {
+                  k1: 62,
+                  k2: 49,
+                  k3: 39,
+                  k4: 31
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 167,
+                  k2: 133,
+                  k3: 107,
+                  k4: 85
+                },
+                u61: {
+                  k1: 150,
+                  k2: 120,
+                  k3: 96,
+                  k4: 77
+                },
+                u51: {
+                  k1: 128,
+                  k2: 103,
+                  k3: 82,
+                  k4: 65
+                },
+                u41: {
+                  k1: 103,
+                  k2: 82,
+                  k3: 65,
+                  k4: 52
+                },
+                u31: {
+                  k1: 77,
+                  k2: 62,
+                  k3: 49,
+                  k4: 39
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 278,
+                  k2: 223,
+                  k3: 178,
+                  k4: 143
+                },
+                u61: {
+                  k1: 250,
+                  k2: 200,
+                  k3: 160,
+                  k4: 128
+                },
+                u51: {
+                  k1: 213,
+                  k2: 170,
+                  k3: 136,
+                  k4: 109
+                },
+                u41: {
+                  k1: 170,
+                  k2: 136,
+                  k3: 109,
+                  k4: 88
+                },
+                u31: {
+                  k1: 128,
+                  k2: 103,
+                  k3: 82,
+                  k4: 66
+                }
+              }
+            }
+          },
+          abSep22: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 406,
+                  k2: 325,
+                  k3: 260,
+                  k4: 208
+                },
+                u61: {
+                  k1: 365,
+                  k2: 293,
+                  k3: 234,
+                  k4: 187
+                },
+                u51: {
+                  k1: 310,
+                  k2: 249,
+                  k3: 199,
+                  k4: 159
+                },
+                u41: {
+                  k1: 248,
+                  k2: 199,
+                  k3: 159,
+                  k4: 127
+                },
+                u31: {
+                  k1: 186,
+                  k2: 149,
+                  k3: 120,
+                  k4: 96
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 676,
+                  k2: 541,
+                  k3: 433,
+                  k4: 346
+                },
+                u61: {
+                  k1: 608,
+                  k2: 487,
+                  k3: 390,
+                  k4: 311
+                },
+                u51: {
+                  k1: 517,
+                  k2: 414,
+                  k3: 332,
+                  k4: 264
+                },
+                u41: {
+                  k1: 414,
+                  k2: 331,
+                  k3: 265,
+                  k4: 212
+                },
+                u31: {
+                  k1: 311,
+                  k2: 248,
+                  k3: 200,
+                  k4: 159
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 138,
+                  k2: 111,
+                  k3: 88,
+                  k4: 71
+                },
+                u61: {
+                  k1: 125,
+                  k2: 100,
+                  k3: 80,
+                  k4: 64
+                },
+                u51: {
+                  k1: 106,
+                  k2: 84,
+                  k3: 68,
+                  k4: 54
+                },
+                u41: {
+                  k1: 84,
+                  k2: 68,
+                  k3: 54,
+                  k4: 44
+                },
+                u31: {
+                  k1: 64,
+                  k2: 51,
+                  k3: 41,
+                  k4: 33
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 174,
+                  k2: 139,
+                  k3: 111,
+                  k4: 89
+                },
+                u61: {
+                  k1: 157,
+                  k2: 125,
+                  k3: 100,
+                  k4: 80
+                },
+                u51: {
+                  k1: 133,
+                  k2: 107,
+                  k3: 85,
+                  k4: 68
+                },
+                u41: {
+                  k1: 107,
+                  k2: 85,
+                  k3: 68,
+                  k4: 54
+                },
+                u31: {
+                  k1: 80,
+                  k2: 64,
+                  k3: 51,
+                  k4: 41
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 289,
+                  k2: 231,
+                  k3: 185,
+                  k4: 148
+                },
+                u61: {
+                  k1: 260,
+                  k2: 208,
+                  k3: 167,
+                  k4: 133
+                },
+                u51: {
+                  k1: 221,
+                  k2: 177,
+                  k3: 142,
+                  k4: 113
+                },
+                u41: {
+                  k1: 177,
+                  k2: 142,
+                  k3: 113,
+                  k4: 91
+                },
+                u31: {
+                  k1: 133,
+                  k2: 107,
+                  k3: 85,
+                  k4: 69
+                }
+              }
+            }
+          },
+          abSep23: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 422,
+                  k2: 338,
+                  k3: 270,
+                  k4: 216
+                },
+                u61: {
+                  k1: 380,
+                  k2: 304,
+                  k3: 243,
+                  k4: 194
+                },
+                u51: {
+                  k1: 323,
+                  k2: 258,
+                  k3: 207,
+                  k4: 165
+                },
+                u41: {
+                  k1: 258,
+                  k2: 206,
+                  k3: 166,
+                  k4: 132
+                },
+                u31: {
+                  k1: 194,
+                  k2: 155,
+                  k3: 125,
+                  k4: 99
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 703,
+                  k2: 562,
+                  k3: 450,
+                  k4: 360
+                },
+                u61: {
+                  k1: 633,
+                  k2: 506,
+                  k3: 405,
+                  k4: 324
+                },
+                u51: {
+                  k1: 538,
+                  k2: 430,
+                  k3: 344,
+                  k4: 275
+                },
+                u41: {
+                  k1: 430,
+                  k2: 344,
+                  k3: 275,
+                  k4: 220
+                },
+                u31: {
+                  k1: 323,
+                  k2: 258,
+                  k3: 207,
+                  k4: 165
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 144,
+                  k2: 115,
+                  k3: 92,
+                  k4: 74
+                },
+                u61: {
+                  k1: 130,
+                  k2: 104,
+                  k3: 83,
+                  k4: 67
+                },
+                u51: {
+                  k1: 111,
+                  k2: 88,
+                  k3: 71,
+                  k4: 56
+                },
+                u41: {
+                  k1: 87,
+                  k2: 70,
+                  k3: 56,
+                  k4: 45
+                },
+                u31: {
+                  k1: 67,
+                  k2: 53,
+                  k3: 42,
+                  k4: 34
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 181,
+                  k2: 144.5,
+                  k3: 115.5,
+                  k4: 92.25
+                },
+                u61: {
+                  k1: 163,
+                  k2: 130.5,
+                  k3: 104,
+                  k4: 83.5
+                },
+                u51: {
+                  k1: 138.5,
+                  k2: 111,
+                  k3: 88,
+                  k4: 70.5
+                },
+                u41: {
+                  k1: 111,
+                  k2: 88.5,
+                  k3: 70,
+                  k4: 56
+                },
+                u31: {
+                  k1: 83,
+                  k2: 66.5,
+                  k3: 52.5,
+                  k4: 42
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 301,
+                  k2: 241,
+                  k3: 193,
+                  k4: 154
+                },
+                u61: {
+                  k1: 271,
+                  k2: 217,
+                  k3: 174,
+                  k4: 139
+                },
+                u51: {
+                  k1: 230,
+                  k2: 184,
+                  k3: 148,
+                  k4: 118
+                },
+                u41: {
+                  k1: 184,
+                  k2: 147,
+                  k3: 118,
+                  k4: 95
+                },
+                u31: {
+                  k1: 138,
+                  k2: 111,
+                  k3: 88,
+                  k4: 71
+                }
+              }
+            }
+          }
+        },
+        var3b: {
+          abSep21: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 390,
+                  k2: 312,
+                  k3: 250,
+                  k4: 200
+                },
+                u61: {
+                  k1: 351,
+                  k2: 281,
+                  k3: 225,
+                  k4: 180
+                },
+                u51: {
+                  k1: 298,
+                  k2: 239,
+                  k3: 191,
+                  k4: 153
+                },
+                u41: {
+                  k1: 238,
+                  k2: 191,
+                  k3: 153,
+                  k4: 122
+                },
+                u31: {
+                  k1: 179,
+                  k2: 143,
+                  k3: 115,
+                  k4: 92
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 650,
+                  k2: 520,
+                  k3: 416,
+                  k4: 333
+                },
+                u61: {
+                  k1: 585,
+                  k2: 468,
+                  k3: 374,
+                  k4: 300
+                },
+                u51: {
+                  k1: 497,
+                  k2: 398,
+                  k3: 318,
+                  k4: 255
+                },
+                u41: {
+                  k1: 398,
+                  k2: 318,
+                  k3: 254,
+                  k4: 204
+                },
+                u31: {
+                  k1: 299,
+                  k2: 239,
+                  k3: 191,
+                  k4: 153
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 133,
+                  k2: 107,
+                  k3: 85,
+                  k4: 69
+                },
+                u61: {
+                  k1: 120,
+                  k2: 96,
+                  k3: 77,
+                  k4: 62
+                },
+                u51: {
+                  k1: 102,
+                  k2: 81,
+                  k3: 65,
+                  k4: 52
+                },
+                u41: {
+                  k1: 81,
+                  k2: 65,
+                  k3: 52,
+                  k4: 42
+                },
+                u31: {
+                  k1: 62,
+                  k2: 49,
+                  k3: 39,
+                  k4: 31
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 167,
+                  k2: 133,
+                  k3: 107,
+                  k4: 85
+                },
+                u61: {
+                  k1: 150,
+                  k2: 120,
+                  k3: 96,
+                  k4: 77
+                },
+                u51: {
+                  k1: 128,
+                  k2: 103,
+                  k3: 82,
+                  k4: 65
+                },
+                u41: {
+                  k1: 103,
+                  k2: 82,
+                  k3: 65,
+                  k4: 52
+                },
+                u31: {
+                  k1: 77,
+                  k2: 62,
+                  k3: 49,
+                  k4: 39
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 278,
+                  k2: 223,
+                  k3: 178,
+                  k4: 143
+                },
+                u61: {
+                  k1: 250,
+                  k2: 200,
+                  k3: 160,
+                  k4: 128
+                },
+                u51: {
+                  k1: 213,
+                  k2: 170,
+                  k3: 136,
+                  k4: 109
+                },
+                u41: {
+                  k1: 170,
+                  k2: 136,
+                  k3: 109,
+                  k4: 88
+                },
+                u31: {
+                  k1: 128,
+                  k2: 103,
+                  k3: 82,
+                  k4: 66
+                }
+              }
+            }
+          },
+          abSep22: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 413,
+                  k2: 330,
+                  k3: 264,
+                  k4: 211
+                },
+                u61: {
+                  k1: 372,
+                  k2: 297,
+                  k3: 238,
+                  k4: 190
+                },
+                u51: {
+                  k1: 316,
+                  k2: 253,
+                  k3: 202,
+                  k4: 162
+                },
+                u41: {
+                  k1: 253,
+                  k2: 202,
+                  k3: 162,
+                  k4: 129
+                },
+                u31: {
+                  k1: 190,
+                  k2: 152,
+                  k3: 122,
+                  k4: 98
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 689,
+                  k2: 551,
+                  k3: 441,
+                  k4: 353
+                },
+                u61: {
+                  k1: 620,
+                  k2: 496,
+                  k3: 397,
+                  k4: 318
+                },
+                u51: {
+                  k1: 527,
+                  k2: 422,
+                  k3: 337,
+                  k4: 270
+                },
+                u41: {
+                  k1: 422,
+                  k2: 338,
+                  k3: 270,
+                  k4: 216
+                },
+                u31: {
+                  k1: 317,
+                  k2: 254,
+                  k3: 203,
+                  k4: 162
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 141,
+                  k2: 113,
+                  k3: 90,
+                  k4: 73
+                },
+                u61: {
+                  k1: 127,
+                  k2: 102,
+                  k3: 82,
+                  k4: 65
+                },
+                u51: {
+                  k1: 108,
+                  k2: 86,
+                  k3: 69,
+                  k4: 55
+                },
+                u41: {
+                  k1: 86,
+                  k2: 69,
+                  k3: 55,
+                  k4: 45
+                },
+                u31: {
+                  k1: 65,
+                  k2: 52,
+                  k3: 42,
+                  k4: 33
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 177,
+                  k2: 141,
+                  k3: 113,
+                  k4: 90
+                },
+                u61: {
+                  k1: 159,
+                  k2: 127,
+                  k3: 102,
+                  k4: 82
+                },
+                u51: {
+                  k1: 136,
+                  k2: 109,
+                  k3: 87,
+                  k4: 69
+                },
+                u41: {
+                  k1: 109,
+                  k2: 87,
+                  k3: 69,
+                  k4: 55
+                },
+                u31: {
+                  k1: 82,
+                  k2: 65,
+                  k3: 52,
+                  k4: 42
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 295,
+                  k2: 236,
+                  k3: 189,
+                  k4: 151
+                },
+                u61: {
+                  k1: 266,
+                  k2: 212,
+                  k3: 170,
+                  k4: 136
+                },
+                u51: {
+                  k1: 226,
+                  k2: 180,
+                  k3: 145,
+                  k4: 116
+                },
+                u41: {
+                  k1: 181,
+                  k2: 144,
+                  k3: 116,
+                  k4: 93
+                },
+                u31: {
+                  k1: 136,
+                  k2: 109,
+                  k3: 87,
+                  k4: 70
+                }
+              }
+            }
+          },
+          abSep23: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 438,
+                  k2: 350,
+                  k3: 280,
+                  k4: 224
+                },
+                u61: {
+                  k1: 394,
+                  k2: 315,
+                  k3: 252,
+                  k4: 202
+                },
+                u51: {
+                  k1: 335,
+                  k2: 268,
+                  k3: 214,
+                  k4: 172
+                },
+                u41: {
+                  k1: 268,
+                  k2: 214,
+                  k3: 171,
+                  k4: 137
+                },
+                u31: {
+                  k1: 201,
+                  k2: 161,
+                  k3: 129,
+                  k4: 104
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 730,
+                  k2: 584,
+                  k3: 467,
+                  k4: 374
+                },
+                u61: {
+                  k1: 657,
+                  k2: 526,
+                  k3: 420,
+                  k4: 337
+                },
+                u51: {
+                  k1: 558,
+                  k2: 447,
+                  k3: 357,
+                  k4: 286
+                },
+                u41: {
+                  k1: 446,
+                  k2: 358,
+                  k3: 286,
+                  k4: 229
+                },
+                u31: {
+                  k1: 335,
+                  k2: 269,
+                  k3: 215,
+                  k4: 172
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 149,
+                  k2: 120,
+                  k3: 95,
+                  k4: 77
+                },
+                u61: {
+                  k1: 134,
+                  k2: 108,
+                  k3: 87,
+                  k4: 69
+                },
+                u51: {
+                  k1: 114,
+                  k2: 91,
+                  k3: 73,
+                  k4: 59
+                },
+                u41: {
+                  k1: 91,
+                  k2: 73,
+                  k3: 59,
+                  k4: 47
+                },
+                u31: {
+                  k1: 69,
+                  k2: 55,
+                  k3: 44,
+                  k4: 35
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 188,
+                  k2: 150,
+                  k3: 120,
+                  k4: 95
+                },
+                u61: {
+                  k1: 169,
+                  k2: 135,
+                  k3: 108,
+                  k4: 87
+                },
+                u51: {
+                  k1: 144,
+                  k2: 115,
+                  k3: 92,
+                  k4: 73
+                },
+                u41: {
+                  k1: 115,
+                  k2: 92,
+                  k3: 73,
+                  k4: 59
+                },
+                u31: {
+                  k1: 87,
+                  k2: 69,
+                  k3: 55,
+                  k4: 44
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 313,
+                  k2: 250,
+                  k3: 200,
+                  k4: 160
+                },
+                u61: {
+                  k1: 282,
+                  k2: 225,
+                  k3: 180,
+                  k4: 144
+                },
+                u51: {
+                  k1: 240,
+                  k2: 191,
+                  k3: 153,
+                  k4: 123
+                },
+                u41: {
+                  k1: 192,
+                  k2: 153,
+                  k3: 123,
+                  k4: 99
+                },
+                u31: {
+                  k1: 144,
+                  k2: 115,
+                  k3: 92,
+                  k4: 74
+                }
+              }
+            }
+          }
+        }
+      }
+      const einkommen = document.getElementById('einkommen');
+      const krippeVo = document.getElementById('krippe-vo');
+      const krippeGt = document.getElementById('krippe-gt');
+      const kigaRe = document.getElementById('kiga-re');
+      const kigaVo = document.getElementById('kiga-vo');
+      const kigaGt = document.getElementById('kiga-gt');
+      const bisher3a = document.getElementById('bisher-3a');
+      const sep21var3a = document.getElementById('sep21-3a');
+      const sep21var3aProzent = document.getElementById('sep21-3a-prozent');
+      const sep21var3aProzentStunde = document.getElementById('sep21-3a-prozent-stunde');
+      const sep22var3a = document.getElementById('sep22-3a');
+      const sep22var3aProzent = document.getElementById('sep22-3a-prozent');
+      const sep22var3aProzentStunde = document.getElementById('sep22-3a-prozent-stunde');
+      const sep23var3a = document.getElementById('sep23-3a');
+      const sep23var3aProzent = document.getElementById('sep23-3a-prozent');
+      const sep23var3aProzentStunde = document.getElementById('sep23-3a-prozent-stunde');
+      const bisher3b = document.getElementById('bisher-3b');
+      const sep21var3b = document.getElementById('sep21-3b');
+      const sep21var3bProzent = document.getElementById('sep21-3b-prozent');
+      const sep21var3bProzentStunde = document.getElementById('sep21-3b-prozent-stunde');
+      const sep22var3b = document.getElementById('sep22-3b');
+      const sep22var3bProzent = document.getElementById('sep22-3b-prozent');
+      const sep22var3bProzentStunde = document.getElementById('sep22-3b-prozent-stunde');
+      const sep23var3b = document.getElementById('sep23-3b');
+      const sep23var3bProzent = document.getElementById('sep23-3b-prozent');
+      const sep23var3bProzentStunde = document.getElementById('sep23-3b-prozent-stunde');
+      const workIt = () => {
+        const kinderzahl = (parseInt(krippeVo.value) || 0) + (parseInt(krippeGt.value) || 0) + (parseInt(kigaRe.value) || 0) + (parseInt(kigaVo.value) || 0) + (parseInt(kigaGt.value) || 0);
+        let summeBisher = 0;
+        let summe3a2021 = 0;
+        let summe3a2022 = 0;
+        let summe3a2023 = 0;
+        let summe3b2021 = 0;
+        let summe3b2022 = 0;
+        let summe3b2023 = 0;
+        let einkommenString = '';
+        let kinderzahlString = '';
+        switch (kinderzahl) {
+          case 1:
+            kinderzahlString = 'k1';
+            break;
+          case 2:
+            kinderzahlString = 'k2';
+            break;
+          case 3:
+            kinderzahlString = 'k3';
+            break;
+          default:
+            kinderzahlString = 'k4';
+        }
+        if (einkommen.value < 31000) {
+          einkommenString = 'u31';
+        } else if (einkommen.value < 41000) {
+          einkommenString = 'u41';
+        } else if (einkommen.value < 51000) {
+          einkommenString = 'u51';
+        } else if (einkommen.value < 61000) {
+          einkommenString = 'u61';
+        } else {
+          einkommenString = 'o61';
+        }
+        ['krippe', 'kiga'].forEach(element1 => {
+          ['re', 'vo', 'gt'].forEach(element2 => {
+            if (typeof geld.bisher[element1][element2] !== 'undefined') {
+              evalString = element1 + element2.charAt(0).toUpperCase() + element2.slice(1);
+              summeBisher += (parseInt(eval(evalString).value) || 0) * geld.bisher[element1][element2][einkommenString][kinderzahlString];
+              summe3a2021 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep21[element1][element2][einkommenString][kinderzahlString];
+              summe3a2022 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep22[element1][element2][einkommenString][kinderzahlString];
+              summe3a2023 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep23[element1][element2][einkommenString][kinderzahlString];
+              summe3b2021 += (parseInt(eval(evalString).value) || 0) * geld.var3b.abSep21[element1][element2][einkommenString][kinderzahlString];
+              summe3b2022 += (parseInt(eval(evalString).value) || 0) * geld.var3b.abSep22[element1][element2][einkommenString][kinderzahlString];
+              summe3b2023 += (parseInt(eval(evalString).value) || 0) * geld.var3b.abSep23[element1][element2][einkommenString][kinderzahlString];
+            }
+          })
+        })
+        bisher3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
+        bisher3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
+        sep21var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2021);
+        sep21var3aProzent.innerHTML = `+${Math.round(1000 * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep21var3aProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep22var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2022);
+        sep22var3aProzent.innerHTML = `+${Math.round(1000 * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep22var3aProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep23var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2023);
+        sep23var3aProzent.innerHTML = `+${Math.round(1000 * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep23var3aProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep21var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2021);
+        sep21var3bProzent.innerHTML = `+${Math.round(1000 * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep21var3bProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep22var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2022);
+        sep22var3bProzent.innerHTML = `+${Math.round(1000 * summe3b2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep22var3bProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3b2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep23var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2023);
+        sep23var3bProzent.innerHTML = `+${Math.round(1000 * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep23var3bProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
+      }
+      document.addEventListener('change', workIt);
+      document.addEventListener('keyup', workIt);
+    </script>
   </body>
 </html>
