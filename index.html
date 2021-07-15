@@ -1399,8 +1399,6 @@
           ['re', 'vo', 'gt'].forEach(element2 => {
             if (typeof geld.bisher[element1][element2] !== 'undefined') {
               evalString = element1 + element2.charAt(0).toUpperCase() + element2.slice(1);
-              console.log(evalString);
-              console.log(summeBisher);
               summeBisher += (parseInt(eval(evalString).value) || 0) * geld.bisher[element1][element2][einkommenString][kinderzahlString];
               summe3a2021 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep21[element1][element2][einkommenString][kinderzahlString];
               summe3a2022 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep22[element1][element2][einkommenString][kinderzahlString];
