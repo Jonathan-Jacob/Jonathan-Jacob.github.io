@@ -1399,6 +1399,8 @@
           ['re', 'vo', 'gt'].forEach(element2 => {
             if (typeof geld.bisher[element1][element2] !== 'undefined') {
               evalString = element1 + element2.charAt(0).toUpperCase() + element2.slice(1);
+              console.log(evalString);
+              console.log(summeBisher);
               summeBisher += (parseInt(eval(evalString).value) || 0) * geld.bisher[element1][element2][einkommenString][kinderzahlString];
               summe3a2021 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep21[element1][element2][einkommenString][kinderzahlString];
               summe3a2022 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep22[element1][element2][einkommenString][kinderzahlString];
@@ -1412,23 +1414,23 @@
         bisher3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
         bisher3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
         sep21var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2021);
-        sep21var3aProzent.innerHTML = `+${Math.round(1000 * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
-        sep21var3aProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep21var3aProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep21var3aProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / 0.9) * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ",") : '0%');
         sep22var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2022);
-        sep22var3aProzent.innerHTML = `+${Math.round(1000 * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
-        sep22var3aProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep22var3aProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep22var3aProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / 0.9) * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep23var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2023);
-        sep23var3aProzent.innerHTML = `+${Math.round(1000 * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
-        sep23var3aProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep23var3aProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep23var3aProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / 0.9) * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep21var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2021);
-        sep21var3bProzent.innerHTML = `+${Math.round(1000 * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
-        sep21var3bProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep21var3bProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep21var3bProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / 0.9) * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep22var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2022);
-        sep22var3bProzent.innerHTML = `+${Math.round(1000 * summe3b2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
-        sep22var3bProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3b2022 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep22var3bProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3b2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep22var3bProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / 0.9) * summe3b2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep23var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2023);
-        sep23var3bProzent.innerHTML = `+${Math.round(1000 * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
-        sep23var3bProzentStunde.innerHTML = `+${Math.round((1000 / 0.9) * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ",");
+        sep23var3bProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep23var3bProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / 0.9) * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
       }
       document.addEventListener('change', workIt);
       document.addEventListener('keyup', workIt);
