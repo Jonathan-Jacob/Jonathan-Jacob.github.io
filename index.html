@@ -27,7 +27,13 @@
           <p><span class="line">Jahresbruttoeinkommen</span> <span class="line">der Eltern in €</span></p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-          <input class="my-input" type="number" id="einkommen">
+          <select class="my-input" id="einkommen">
+            <option value="65000">über 61.000 €</option>
+            <option value="55000">51.000 € bis 60.999 €</option>
+            <option value="45000">41.000 € bis 50.999 €</option>
+            <option value="35000">31.000 € bis 40.999 €</option>
+            <option value="0" selected>bis 30.999 €</option>
+          </select>
         </div>
         <div class="col-12 col-lg-6 mb-3 d-none d-lg-block"></div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
@@ -188,7 +194,7 @@
           <hr>
         </div>
       </div>
-      <p class="imprint mb-3">© Jonathan Jacob, Untere Dorfstr. 45, D-79618 Rheinfelden | info@kita-rechner.de | Alle Angaben ohne Gewähr | Berechnungsgrundlage: RG 27,5 Stunden/Woche, VÖ 30 Stunden/Woche, GT 50 Stunden/Woche, Reduzierung auf 45 Stunden/Woche ab Sep 2021 | Datenquelle der Gebühren: Sozialausschuss Rheinfelden, Beschlussvorlage 503/05/2021/1 <span class="line">Anlage 1</span></p>
+      <p class="imprint mb-3">© Jonathan Jacob, Untere Dorfstr. 45, D-79618 Rheinfelden | info@kita-rechner.de | Alle Angaben ohne Gewähr | kein kommerzielles Interesse | keine Cookies | kein Datensammeln | Berechnungsgrundlage: RG 27,5 Stunden/Woche, VÖ 30 Stunden/Woche, GT 50 Stunden/Woche, Reduzierung auf 45 Stunden/Woche ab Sep 2021 | Datenquelle der Gebühren: Sozialausschuss Rheinfelden, Beschlussvorlage 503/05/2021/1 <span class="line">Anlage 1</span></p>
     </div>
     <script>
       const geld = {

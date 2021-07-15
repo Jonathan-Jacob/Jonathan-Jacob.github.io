@@ -33,6 +33,10 @@ body {
   align-items: center;
 }
 
+select {
+  height: 30px;
+}
+
 span.line {
   display: inline-block;
 }
