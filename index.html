@@ -20,8 +20,29 @@
   <body>
     <div class="my-container">
       <h1 class="mt-3">Kita-Gebührenrechner</h1>
-      <p>für die Stadt Rheinfelden (Baden)</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <p>für die Stadt Rheinfelden (Baden)</p>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#hintergrund">
+          Hintergrund
+        </button>
+      </div>
       <hr>
+      <div class="modal fade" id="hintergrund" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="hintergrundLabel">Hintergrund</h5>
+            </div>
+            <div class="modal-body">
+              Entscheidungsträger der Stadt Rheinfelden möchten die Kita-Gebühren erhöhen und die Stundenanzahl der Ganztagsbetreuung von 50 auf 45 Stunden senken. In der Sitzung des Sozialausschusses vom 12. Juli 2021 wurden verschiedene Varianten der Gebührenerhöhung diskutiert. Es wurde beschlossen, dass dem Gemeinderat am 22. Juli 2021 die Variante 3b zur Entscheidung vorgelegt werden soll, auch die Variante 3a wurde diskutiert. Dieser Rechner zeigt auf, was diese Varianten für individuelle Eltern im Vergleich zur aktuellen Situation bedeuten.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">schließen</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
           <p><span class="line">Jahresbruttoeinkommen</span> <span class="line">der Eltern in €</span></p>
@@ -1471,6 +1492,17 @@
       rechner.addEventListener('click', () => {
         rechnung.classList.remove('d-none');
       });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
     </script>
   </body>
 </html>
