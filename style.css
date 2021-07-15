@@ -1,9 +1,9 @@
 :root {
   --dark: #011627;
   --orange: #ff9f1c;
-  --bright: #fdfffc;
+  --bright: #f2f2f8;
   --ice: #2ec4b6;
-  --red: #e71d36;
+  --red: #dc3545;
 }
 
 body {
@@ -22,8 +22,21 @@ body {
   width: 100%;
 }
 
+.my-button {
+  width: 100%;
+}
+
 .row {
   align-items: center;
+}
+
+span.line {
+  display: inline-block;
+}
+
+h1, h2 {
+  color: var(--red);
+  font-weight: 700;
 }
 
 table {
@@ -55,10 +68,6 @@ p {
   white-space: pre-wrap;
   color: var(--dark);
   margin-bottom: 0;
-}
-
-h1 {
-  color: var(--red);
 }
 
 .imprint {
