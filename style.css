@@ -9,7 +9,7 @@
 body {
   display: flex;
   flex-direction: column; justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--bright);
   color: var(--dark);
   font-family: 'IBM Plex sans', sans-serif;
