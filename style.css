@@ -33,6 +33,20 @@ body {
   align-items: center;
 }
 
+.link-gray {
+  padding: 0;
+  color: var(--dark);
+}
+
+.link-gray:hover {
+  color: var(--red);
+}
+
+.link-gray:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 select {
   height: 30px;
 }
