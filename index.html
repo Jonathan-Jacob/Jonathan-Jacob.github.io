@@ -1975,7 +1975,6 @@
         bisher1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
         bisher3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
         sep21var1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe1_2021);
-        console.log(summe1_2021);
         sep21var1Prozent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep21var1ProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2021 / summeBisher - 1000) / 10}%`.replace(".", ",") : '0%');
         sep22var1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe1_2022);
