@@ -43,7 +43,7 @@
           <p><span class="line">Jahresbruttoeinkommen</span> <span class="line">der Eltern in €</span></p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-          <select class="my-input" id="einkommen">
+          <select class="my-select" id="einkommen">
             <option value="65000">über 61.000 €</option>
             <option value="55000">51.000 € bis 60.999 €</option>
             <option value="45000">41.000 € bis 50.999 €</option>
@@ -57,36 +57,42 @@
           <p>(verlängerte Öffnungszeiten, VÖ)</p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-          <input class="my-input" type="number" id="krippe-vo" min=0 max=10>
+          <input class="my-input" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" type="number" id="krippe-vo" min=0 max=10>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
           <p>Anzahl Kita-Kinder unter 3</p>
           <p>(Ganztagsbetreuung, GT)</p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-          <input class="my-input" type="number" id="krippe-gt" min=0 max=10>
+          <input class="my-input" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" type="number" id="krippe-gt" min=0 max=10>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
           <p>Anzahl Kita-Kinder ab 3</p>
           <p>(Regelbetreuung, RG)</p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-          <input class="my-input" type="number" id="kiga-re" min=0 max=10>
+          <input class="my-input" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" type="number" id="kiga-re" min=0 max=10>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
           <p>Anzahl Kita-Kinder ab 3</p>
           <p>(verlängerte Öffnungszeiten, VÖ)</p>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="kiga-vo" min=0 max=10></div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" type="number" id="kiga-vo" min=0 max=10>
+        </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
           <p>Anzahl Kita-Kinder ab 3</p>
           <p>(Ganztagsbetreuung, GT)</p>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="kiga-gt" min=0 max=10></div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" type="number" id="kiga-gt" min=0 max=10>
+        </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
           <p>Anzahl weiterer Kinder unter 18</p>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="andere" min=0 max=10></div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-3">
+          <input class="my-input" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" type="number" id="andere" min=0 max=10>
+        </div>
         <div class="col-12 my-3">
           <button type="button" class="btn btn-secondary my-button mb-3" data-toggle="modal"
             data-target="#hintergrund">Hintergrundinformationen anzeigen</button>
@@ -1987,6 +1993,20 @@
         sep23var3bProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep23var3bProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / faktor) * summe3b2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
       }
+      const korrektor = (event) => {
+        console.log(event);
+        if (event.target.value > 10) {
+          event.target.value = 10;
+        } else if (event.target.value < 0) {
+          event.target.value = '';
+        } else if (event.target.value.length > 1 && event.target.value[0] == '0') {
+          event.target.value = event.target.value[1];
+        }
+      }
+      document.querySelectorAll('.my-input').forEach(element => {
+        addEventListener('keyup', korrektor);
+        addEventListener('click', korrektor);
+      });
       document.addEventListener('change', workIt);
       document.addEventListener('keyup', workIt);
       const rechner = document.getElementById('rechner');

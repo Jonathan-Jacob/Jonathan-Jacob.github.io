@@ -21,6 +21,10 @@ body {
   margin: 0 auto;
 }
 
+.my-select {
+  width: 100%;
+}
+
 .my-input {
   width: 100%;
 }
