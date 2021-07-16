@@ -22,9 +22,6 @@
       <h1 class="mt-3">Kita-Gebührenrechner</h1>
       <div class="d-flex justify-content-between align-items-center">
         <p>für die Stadt Rheinfelden (Baden)</p>
-        <button type="button" class="btn btn-link link-gray" data-toggle="modal" data-target="#hintergrund">
-          Hintergrund
-        </button>
       </div>
       <hr>
       <div class="modal fade" id="hintergrund" tabindex="-1" role="dialog"
@@ -35,7 +32,7 @@
               <h5 class="modal-title" id="hintergrundLabel">Hintergrund</h5>
             </div>
             <div class="modal-body">
-              Entscheidungsträger der Stadt Rheinfelden möchten die Kita-Gebühren erhöhen und die Stundenanzahl der Ganztagsbetreuung von 50 auf 45 Stunden pro Woche senken. In der Sitzung des Sozialausschusses vom 12. Juli 2021 wurden verschiedene Varianten der Gebührenerhöhung besprochen. Es wurde beschlossen, dass dem Gemeinderat am 22. Juli 2021 die Variante 3b zur Entscheidung vorgelegt werden soll, auch die Variante 3a wurde diskutiert. Dieser Rechner zeigt auf, was diese Varianten für individuelle Eltern im Vergleich zur aktuellen Situation bedeuten.
+              Entscheidungsträger der Stadt Rheinfelden möchten die Kita-Gebühren auf den 1. Januar 2022 erhöhen und die Stundenanzahl der Ganztagsbetreuung ab dem 1. September 2021 von 50 auf 45 Stunden pro Woche senken. In der Sitzung des Sozialausschusses vom 12. Juli 2021 wurden verschiedene Varianten der Gebührenerhöhung besprochen. Es wurde beschlossen, dass dem Gemeinderat am 22. Juli 2021 (Sitzungsbeginn 16:30 im Rathaus Rheinfelden) die Variante 3b zur Entscheidung vorgelegt werden soll, auch die Variante 3a wurde diskutiert. Dieser Rechner zeigt auf, was diese Varianten für individuelle Eltern im Vergleich zur aktuellen Situation bedeuten.
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">schließen</button>
@@ -92,7 +89,11 @@
           <p>Anzahl weiterer Kinder unter 18</p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="andere" min=0 max=10></div>
-        <div class="col-12 my-3"><button type="button" class="btn btn-danger my-button" id="rechner">monatliche Gebühren berechnen</button></div>
+        <div class="col-12 my-3">
+          <button type="button" class="btn btn-secondary my-button mb-3" data-toggle="modal"
+            data-target="#hintergrund">Hintergrundinformationen lesen</button>
+          <button type="button" class="btn btn-danger my-button" id="rechner">monatliche Gebühren berechnen</button>
+        </div>
       </div>
       <hr>
       <div class="row align-items-start d-none" id="rechnung">
@@ -109,7 +110,7 @@
               <hr class="my-2">
             </div>
             <div class="col-4 mb-2">
-              <p><strong>ab Sep 2021</strong></p>
+              <p><strong>ab Jan 2022</strong></p>
             </div>
             <div class="col-4 mb-2">
               <p><strong>Teuerung</strong></p>
@@ -168,7 +169,7 @@
               <hr class="my-2">
             </div>
             <div class="col-4 mb-2">
-              <p><strong>ab Sep 2021</strong></p>
+              <p><strong>ab Jan 2022</strong></p>
             </div>
             <div class="col-4 mb-2">
               <p><strong>Teuerung</strong></p>
