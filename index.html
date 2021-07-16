@@ -20,19 +20,17 @@
   <body>
     <div class="my-container">
       <h1 class="mt-3">Kita-Gebührenrechner</h1>
-      <div class="d-flex justify-content-between align-items-center">
-        <p>für die Stadt Rheinfelden (Baden)</p>
-      </div>
+      <p>für die Stadt Rheinfelden (Baden)</p>
       <hr>
       <div class="modal fade" id="hintergrund" tabindex="-1" role="dialog"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="hintergrundLabel">Hintergrund</h5>
+              <h2 class="modal-title" id="hintergrundLabel">Hintergrund</h2>
             </div>
             <div class="modal-body">
-              Entscheidungsträger der Stadt Rheinfelden möchten die Kita-Gebühren auf den 1. Januar 2022 erhöhen und die Stundenanzahl der Ganztagsbetreuung ab dem 1. September 2021 von 50 auf 45 Stunden pro Woche senken. In der Sitzung des Sozialausschusses vom 12. Juli 2021 wurden verschiedene Varianten der Gebührenerhöhung besprochen. Es wurde beschlossen, dass dem Gemeinderat am 22. Juli 2021 (Sitzungsbeginn 16:30 im Rathaus Rheinfelden) die Variante 3b zur Entscheidung vorgelegt werden soll, auch die Variante 3a wurde diskutiert. Dieser Rechner zeigt auf, was diese Varianten für individuelle Eltern im Vergleich zur aktuellen Situation bedeuten.
+              Entscheidungsträger der Stadt Rheinfelden möchten die Kita-Gebühren zum 1. Januar 2022 erhöhen und den Umfang der Ganztagsbetreuung ab dem 1. September 2021 von 50 auf 45 Stunden pro Woche verringern. In der Sitzung des Sozialausschusses vom 12. Juli 2021 wurden verschiedene Varianten der Gebührenerhöhung besprochen. Es wurde beschlossen, dass dem Gemeinderat am 22. Juli 2021 (Sitzungsbeginn 16:30 im Rathaus Rheinfelden) die Variante 3b zur Entscheidung vorgelegt werden soll. Der Gesamtelternbeirat spricht sich dagegen für die Variante 1 bei Beibehaltung der bisherigen Stundenanzahl aus. Dieser Rechner zeigt auf, was diese Varianten für individuelle Eltern im Vergleich zur aktuellen Situation bedeuten.
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">schließen</button>
@@ -91,7 +89,7 @@
         <div class="col-12 col-sm-6 col-lg-3 mb-3"><input class="my-input" type="number" id="andere" min=0 max=10></div>
         <div class="col-12 my-3">
           <button type="button" class="btn btn-secondary my-button mb-3" data-toggle="modal"
-            data-target="#hintergrund">Hintergrundinformationen lesen</button>
+            data-target="#hintergrund">Hintergrundinformationen anzeigen</button>
           <button type="button" class="btn btn-danger my-button" id="rechner">monatliche Gebühren berechnen</button>
         </div>
       </div>
@@ -100,12 +98,13 @@
         <div class="col-12 col-lg-6">
           <div class="row">
             <div class="col-12 mb-3">
-              <h2>Variante 3a</h2>
+              <h2>Variante 1</h2>
+              <p class="mb-2">bevorzugte Variante des Gesamtelternbeirats</p>
             </div>
             <div class="col-12 mb-2">
               <p><strong>bisher</strong></p>
             </div>
-            <div class="col-12 mb-2" id="bisher-3a">0,00 €</div>
+            <div class="col-12 mb-2" id="bisher-1">0,00 €</div>
             <div class="col-12">
               <hr class="my-2">
             </div>
@@ -118,9 +117,9 @@
             <div class="col-4 mb-2">
               <p><strong>pro Stunde</strong></p>
             </div>
-            <div class="col-4 mb-2" id="sep21-3a">0,00 €</div>
-            <div class="col-4 mb-2" id="sep21-3a-prozent">0%</div>
-            <div class="col-4 mb-2" id="sep21-3a-prozent-stunde">0%</div>
+            <div class="col-4 mb-2" id="sep21-1">0,00 €</div>
+            <div class="col-4 mb-2" id="sep21-1-prozent">0%</div>
+            <div class="col-4 mb-2" id="sep21-1-prozent-stunde">0%</div>
             <div class="col-12">
               <hr class="my-2">
             </div>
@@ -133,9 +132,9 @@
             <div class="col-4 mb-2">
               <p><strong>pro Stunde</strong></p>
             </div>
-            <div class="col-4 mb-2" id="sep22-3a">0,00 €</div>
-            <div class="col-4 mb-2" id="sep22-3a-prozent">0%</div>
-            <div class="col-4 mb-2" id="sep22-3a-prozent-stunde">0%</div>
+            <div class="col-4 mb-2" id="sep22-1">0,00 €</div>
+            <div class="col-4 mb-2" id="sep22-1-prozent">0%</div>
+            <div class="col-4 mb-2" id="sep22-1-prozent-stunde">0%</div>
             <div class="col-12">
               <hr class="my-2">
             </div>
@@ -148,9 +147,9 @@
             <div class="col-4 mb-2">
               <p><strong>pro Stunde</strong></p>
             </div>
-            <div class="col-4 mb-2" id="sep23-3a">0,00 €</div>
-            <div class="col-4 mb-2" id="sep23-3a-prozent">0%</div>
-            <div class="col-4 mb-2" id="sep23-3a-prozent-stunde">0%</div>
+            <div class="col-4 mb-2" id="sep23-1">0,00 €</div>
+            <div class="col-4 mb-2" id="sep23-1-prozent">0%</div>
+            <div class="col-4 mb-2" id="sep23-1-prozent-stunde">0%</div>
           </div>
         </div>
         <div class="col-12 order-12 order-lg-2">
@@ -160,6 +159,7 @@
           <div class="row">
             <div class="col-12 mb-3">
               <h2>Variante 3b</h2>
+              <p class="mb-2">bevorzugte Variante des Sozialausschusses</p>
             </div>
             <div class="col-12 mb-2">
               <p><strong>bisher</strong></p>
@@ -216,7 +216,7 @@
           <hr>
         </div>
       </div>
-      <p class="imprint mb-4">© Jonathan Jacob, Untere Dorfstr. 45, D-79618 Rheinfelden | info@kita-rechner.de | Alle Angaben ohne Gewähr | kein kommerzielles Interesse | keine Cookies | kein Datensammeln | Berechnungsgrundlage: RG 27,5 Stunden/Woche, VÖ 30 Stunden/Woche, GT 50 Stunden/Woche, Reduzierung auf 45 Stunden/Woche ab Sep 2021 | Datenquelle der Gebühren: Sozialausschuss Rheinfelden, Beschlussvorlage 503/05/2021/1 <span class="line">Anlage 1</span></p>
+      <p class="imprint mb-4">© Jonathan Jacob, Untere Dorfstr. 45, D-79618 Rheinfelden | info@kita-rechner.de | Alle Angaben ohne Gewähr | kein kommerzielles Interesse | keine Cookies | kein Datensammeln | Berechnungsgrundlage: RG 27,5 Stunden/Woche, VÖ 30 Stunden/Woche, GT 50 Stunden/Woche (in Variante 3b zukünftig mit Reduzierung auf 45 Stunden/Woche) | Datenquelle der Gebühren: Sozialausschuss Rheinfelden, Beschlussvorlage 503/05/2021/1 <span class="line">Anlage 1</span></p>
     </div>
     <script>
       const geld = {
@@ -382,6 +382,506 @@
                 k2: 95,
                 k3: 76,
                 k4: 61
+              }
+            }
+          }
+        },
+        var1: {
+          abSep21: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 377,
+                  k2: 302,
+                  k3: 242,
+                  l4: 193
+                },
+                u61: {
+                  k1: 351,
+                  k2: 281,
+                  k3: 225,
+                  k4: 180
+                },
+                u51: {
+                  k1: 298,
+                  k2: 239,
+                  k3: 191,
+                  k4: 152
+                },
+                u41: {
+                  k1: 238,
+                  k2: 191,
+                  k3: 152,
+                  k4: 122
+                },
+                u31: {
+                  k1: 179,
+                  k2: 143,
+                  k3: 115,
+                  k4: 92
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 629,
+                  k2: 503,
+                  k3: 402,
+                  l4: 322
+                },
+                u61: {
+                  k1: 585,
+                  k2: 468,
+                  k3: 374,
+                  k4: 299
+                },
+                u51: {
+                  k1: 497,
+                  k2: 398,
+                  k3: 318,
+                  k4: 254
+                },
+                u41: {
+                  k1: 398,
+                  k2: 318,
+                  k3: 254,
+                  k4: 204
+                },
+                u31: {
+                  k1: 299,
+                  k2: 239,
+                  k3: 191,
+                  k4: 153
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 129,
+                  k2: 103,
+                  k3: 83,
+                  l4: 66
+                },
+                u61: {
+                  k1: 120,
+                  k2: 96,
+                  k3: 77,
+                  k4: 62
+                },
+                u51: {
+                  k1: 102,
+                  k2: 81,
+                  k3: 65,
+                  k4: 52
+                },
+                u41: {
+                  k1: 81,
+                  k2: 65,
+                  k3: 52,
+                  k4: 42
+                },
+                u31: {
+                  k1: 62,
+                  k2: 49,
+                  k3: 39,
+                  k4: 32
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 161,
+                  k2: 129,
+                  k3: 103,
+                  l4: 83
+                },
+                u61: {
+                  k1: 150,
+                  k2: 120,
+                  k3: 96,
+                  k4: 77
+                },
+                u51: {
+                  k1: 128,
+                  k2: 103,
+                  k3: 82,
+                  k4: 65
+                },
+                u41: {
+                  k1: 103,
+                  k2: 82,
+                  k3: 65,
+                  k4: 52
+                },
+                u31: {
+                  k1: 77,
+                  k2: 62,
+                  k3: 49,
+                  k4: 39
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 269,
+                  k2: 215,
+                  k3: 172,
+                  l4: 138
+                },
+                u61: {
+                  k1: 250,
+                  k2: 200,
+                  k3: 160,
+                  k4: 128
+                },
+                u51: {
+                  k1: 213,
+                  k2: 170,
+                  k3: 136,
+                  k4: 109
+                },
+                u41: {
+                  k1: 170,
+                  k2: 136,
+                  k3: 109,
+                  k4: 88
+                },
+                u31: {
+                  k1: 128,
+                  k2: 103,
+                  k3: 82,
+                  k4: 66
+                }
+              }
+            }
+          },
+          abSep22: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 392,
+                  k2: 314,
+                  k3: 251,
+                  l4: 201
+                },
+                u61: {
+                  k1: 365,
+                  k2: 292,
+                  k3: 233,
+                  k4: 187
+                },
+                u51: {
+                  k1: 310,
+                  k2: 248,
+                  k3: 198,
+                  k4: 159
+                },
+                u41: {
+                  k1: 248,
+                  k2: 198,
+                  k3: 158,
+                  k4: 127
+                },
+                u31: {
+                  k1: 186,
+                  k2: 149,
+                  k3: 120,
+                  k4: 96
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 654,
+                  k2: 523,
+                  k3: 418,
+                  l4: 334
+                },
+                u61: {
+                  k1: 608,
+                  k2: 486,
+                  k3: 389,
+                  k4: 311
+                },
+                u51: {
+                  k1: 517,
+                  k2: 413,
+                  k3: 331,
+                  k4: 264
+                },
+                u41: {
+                  k1: 414,
+                  k2: 330,
+                  k3: 265,
+                  k4: 211
+                },
+                u31: {
+                  k1: 311,
+                  k2: 248,
+                  k3: 199,
+                  k4: 159
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 134,
+                  k2: 107,
+                  k3: 86,
+                  l4: 69
+                },
+                u61: {
+                  k1: 125,
+                  k2: 100,
+                  k3: 80,
+                  k4: 64
+                },
+                u51: {
+                  k1: 106,
+                  k2: 85,
+                  k3: 68,
+                  k4: 54
+                },
+                u41: {
+                  k1: 85,
+                  k2: 68,
+                  k3: 54,
+                  k4: 44
+                },
+                u31: {
+                  k1: 64,
+                  k2: 51,
+                  k3: 41,
+                  k4: 33
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 167,
+                  k2: 134,
+                  k3: 107,
+                  l4: 86
+                },
+                u61: {
+                  k1: 156,
+                  k2: 125,
+                  k3: 100,
+                  k4: 80
+                },
+                u51: {
+                  k1: 133,
+                  k2: 107,
+                  k3: 85,
+                  k4: 68
+                },
+                u41: {
+                  k1: 107,
+                  k2: 85,
+                  k3: 68,
+                  k4: 54
+                },
+                u31: {
+                  k1: 80,
+                  k2: 64,
+                  k3: 51,
+                  k4: 41
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 280,
+                  k2: 224,
+                  k3: 179,
+                  l4: 143
+                },
+                u61: {
+                  k1: 260,
+                  k2: 208,
+                  k3: 166,
+                  k4: 133
+                },
+                u51: {
+                  k1: 221,
+                  k2: 177,
+                  k3: 141,
+                  k4: 113
+                },
+                u41: {
+                  k1: 177,
+                  k2: 142,
+                  k3: 113,
+                  k4: 91
+                },
+                u31: {
+                  k1: 133,
+                  k2: 107,
+                  k3: 85,
+                  k4: 69
+                }
+              }
+            }
+          },
+          abSep23: {
+            krippe: {
+              vo: {
+                o61: {
+                  k1: 408,
+                  k2: 326,
+                  k3: 261,
+                  l4: 209
+                },
+                u61: {
+                  k1: 379,
+                  k2: 203,
+                  k3: 243,
+                  k4: 194
+                },
+                u51: {
+                  k1: 322,
+                  k2: 258,
+                  k3: 207,
+                  k4: 165
+                },
+                u41: {
+                  k1: 258,
+                  k2: 206,
+                  k3: 165,
+                  k4: 132
+                },
+                u31: {
+                  k1: 194,
+                  k2: 155,
+                  k3: 125,
+                  k4: 100
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 680,
+                  k2: 544,
+                  k3: 435,
+                  l4: 348
+                },
+                u61: {
+                  k1: 632,
+                  k2: 506,
+                  k3: 405,
+                  k4: 324
+                },
+                u51: {
+                  k1: 537,
+                  k2: 430,
+                  k3: 344,
+                  k4: 275
+                },
+                u41: {
+                  k1: 430,
+                  k2: 344,
+                  k3: 275,
+                  k4: 220
+                },
+                u31: {
+                  k1: 323,
+                  k2: 258,
+                  k3: 206,
+                  k4: 165
+                }
+              }
+            },
+            kiga: {
+              re: {
+                o61: {
+                  k1: 139,
+                  k2: 111,
+                  k3: 90,
+                  l4: 71
+                },
+                u61: {
+                  k1: 130,
+                  k2: 104,
+                  k3: 83,
+                  k4: 67
+                },
+                u51: {
+                  k1: 110,
+                  k2: 88,
+                  k3: 71,
+                  k4: 56
+                },
+                u41: {
+                  k1: 88,
+                  k2: 70,
+                  k3: 56,
+                  k4: 45
+                },
+                u31: {
+                  k1: 67,
+                  k2: 53,
+                  k3: 42,
+                  k4: 34
+                }
+              },
+              vo: {
+                o61: {
+                  k1: 174,
+                  k2: 139,
+                  k3: 111,
+                  l4: 90
+                },
+                u61: {
+                  k1: 162,
+                  k2: 130,
+                  k3: 104,
+                  k4: 83
+                },
+                u51: {
+                  k1: 138,
+                  k2: 111,
+                  k3: 88,
+                  k4: 71
+                },
+                u41: {
+                  k1: 111,
+                  k2: 88,
+                  k3: 70,
+                  k4: 56
+                },
+                u31: {
+                  k1: 83,
+                  k2: 67,
+                  k3: 53,
+                  k4: 42
+                }
+              },
+              gt: {
+                o61: {
+                  k1: 291,
+                  k2: 233,
+                  k3: 186,
+                  l4: 149
+                },
+                u61: {
+                  k1: 271,
+                  k2: 217,
+                  k3: 173,
+                  k4: 139
+                },
+                u51: {
+                  k1: 230,
+                  k2: 184,
+                  k3: 147,
+                  k4: 118
+                },
+                u41: {
+                  k1: 184,
+                  k2: 147,
+                  k3: 118,
+                  k4: 95
+                },
+                u31: {
+                  k1: 138,
+                  k2: 111,
+                  k3: 89,
+                  k4: 71
+                }
               }
             }
           }
@@ -1394,16 +1894,16 @@
       const kigaVo = document.getElementById('kiga-vo');
       const kigaGt = document.getElementById('kiga-gt');
       const andere = document.getElementById('andere');
-      const bisher3a = document.getElementById('bisher-3a');
-      const sep21var3a = document.getElementById('sep21-3a');
-      const sep21var3aProzent = document.getElementById('sep21-3a-prozent');
-      const sep21var3aProzentStunde = document.getElementById('sep21-3a-prozent-stunde');
-      const sep22var3a = document.getElementById('sep22-3a');
-      const sep22var3aProzent = document.getElementById('sep22-3a-prozent');
-      const sep22var3aProzentStunde = document.getElementById('sep22-3a-prozent-stunde');
-      const sep23var3a = document.getElementById('sep23-3a');
-      const sep23var3aProzent = document.getElementById('sep23-3a-prozent');
-      const sep23var3aProzentStunde = document.getElementById('sep23-3a-prozent-stunde');
+      const bisher1 = document.getElementById('bisher-1');
+      const sep21var1 = document.getElementById('sep21-1');
+      const sep21var1Prozent = document.getElementById('sep21-1-prozent');
+      const sep21var1ProzentStunde = document.getElementById('sep21-1-prozent-stunde');
+      const sep22var1 = document.getElementById('sep22-1');
+      const sep22var1Prozent = document.getElementById('sep22-1-prozent');
+      const sep22var1ProzentStunde = document.getElementById('sep22-1-prozent-stunde');
+      const sep23var1 = document.getElementById('sep23-1');
+      const sep23var1Prozent = document.getElementById('sep23-1-prozent');
+      const sep23var1ProzentStunde = document.getElementById('sep23-1-prozent-stunde');
       const bisher3b = document.getElementById('bisher-3b');
       const sep21var3b = document.getElementById('sep21-3b');
       const sep21var3bProzent = document.getElementById('sep21-3b-prozent');
@@ -1417,9 +1917,9 @@
       const workIt = () => {
         const kinderzahl = (parseInt(krippeVo.value) || 0) + (parseInt(krippeGt.value) || 0) + (parseInt(kigaRe.value) || 0) + (parseInt(kigaVo.value) || 0) + (parseInt(kigaGt.value) || 0) + (parseInt(andere.value) || 0);
         let summeBisher = 0;
-        let summe3a2021 = 0;
-        let summe3a2022 = 0;
-        let summe3a2023 = 0;
+        let summe1_2021 = 0;
+        let summe1_2022 = 0;
+        let summe1_2023 = 0;
         let summe3b2021 = 0;
         let summe3b2022 = 0;
         let summe3b2023 = 0;
@@ -1454,9 +1954,9 @@
             if (typeof geld.bisher[element1][element2] !== 'undefined') {
               evalString = element1 + element2.charAt(0).toUpperCase() + element2.slice(1);
               summeBisher += (parseInt(eval(evalString).value) || 0) * geld.bisher[element1][element2][einkommenString][kinderzahlString];
-              summe3a2021 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep21[element1][element2][einkommenString][kinderzahlString];
-              summe3a2022 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep22[element1][element2][einkommenString][kinderzahlString];
-              summe3a2023 += (parseInt(eval(evalString).value) || 0) * geld.var3a.abSep23[element1][element2][einkommenString][kinderzahlString];
+              summe1_2021 += (parseInt(eval(evalString).value) || 0) * geld.var1.abSep21[element1][element2][einkommenString][kinderzahlString];
+              summe1_2022 += (parseInt(eval(evalString).value) || 0) * geld.var1.abSep22[element1][element2][einkommenString][kinderzahlString];
+              summe1_2023 += (parseInt(eval(evalString).value) || 0) * geld.var1.abSep23[element1][element2][einkommenString][kinderzahlString];
               summe3b2021 += (parseInt(eval(evalString).value) || 0) * geld.var3b.abSep21[element1][element2][einkommenString][kinderzahlString];
               summe3b2022 += (parseInt(eval(evalString).value) || 0) * geld.var3b.abSep22[element1][element2][einkommenString][kinderzahlString];
               summe3b2023 += (parseInt(eval(evalString).value) || 0) * geld.var3b.abSep23[element1][element2][einkommenString][kinderzahlString];
@@ -1466,17 +1966,17 @@
         const stundenAlt = krippeVo.value * 6 + krippeGt.value * 10 + kigaRe.value * 5.5 + kigaVo.value * 6 + kigaGt.value * 10;
         const stundenNeu = krippeVo.value * 6 + krippeGt.value * 9 + kigaRe.value * 5.5 + kigaVo.value * 6 + kigaGt.value * 9;
         const faktor = stundenNeu / stundenAlt || 1;
-        bisher3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
+        bisher1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
         bisher3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summeBisher);
-        sep21var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2021);
-        sep21var3aProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
-        sep21var3aProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / faktor) * summe3a2021 / summeBisher - 1000) / 10}%`.replace(".", ",") : '0%');
-        sep22var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2022);
-        sep22var3aProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
-        sep22var3aProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / faktor) * summe3a2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
-        sep23var3a.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3a2023);
-        sep23var3aProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
-        sep23var3aProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / faktor) * summe3a2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep21var1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe1_2021);
+        sep21var1Prozent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep21var1ProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2021 / summeBisher - 1000) / 10}%`.replace(".", ",") : '0%');
+        sep22var1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe1_2022);
+        sep22var1Prozent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep22var1ProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2022 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep23var1.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe1_2023);
+        sep23var1Prozent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
+        sep23var1ProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe1_2023 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep21var3b.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(summe3b2021);
         sep21var3bProzent.innerHTML = (summeBisher !== 0 ? `+${Math.round(1000 * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');
         sep21var3bProzentStunde.innerHTML = (summeBisher !== 0 ? `+${Math.round((1000 / faktor) * summe3b2021 / summeBisher - 1000) / 10}%`.replace(".", ","): '0%');

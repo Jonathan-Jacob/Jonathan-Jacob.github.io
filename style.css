@@ -17,7 +17,7 @@ body {
 }
 
 .my-container {
-  width: max(min(96vw, 400px), min(84vw, max(72vw, 800px)));
+  width: max(min(96vw, 300px), min(84vw, max(72vw, 900px)));
   margin: 0 auto;
 }
 
@@ -53,6 +53,11 @@ select {
 
 span.line {
   display: inline-block;
+}
+
+span.note {
+  font-size: clamp(1rem, 16px, 2rem);
+  color: var(--dark);
 }
 
 h1, h2 {
