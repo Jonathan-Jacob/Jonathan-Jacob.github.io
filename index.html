@@ -2006,6 +2006,7 @@
         }
       }
       document.querySelectorAll('.my-input').forEach(element => {
+        element.onpaste = e => e.preventDefault();
         addEventListener('keyup', korrektor);
         addEventListener('click', korrektor);
       });
